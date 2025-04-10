@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build": "sass --no-source-map ./src/main.scss ./dist/styles.css && sass --no-source-map ./src/product.scss ./dist/products.css"
+    "build": "sass --no-source-map ./src/main.scss ./src/styles.css && sass --no-source-map ./src/product.scss ./src/products.css"
   },
   "keywords": [],
   "author": "",
