@@ -1,0 +1,16 @@
+{
+  "name": "temp4---copy",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "sass --no-source-map ./src/main.scss ./dist/styles.css && sass --no-source-map ./src/product.scss ./dist/products.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "sass": "^1.86.0",
+    "sass-loader": "^16.0.5"
+  }
+}

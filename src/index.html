@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Utsav-Assignment</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;800&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+    <link rel="stylesheet" href="../dist/styles.css" />
+    
+  </head>
+
+  <body>
+
+    <header>
+        <div class="header__container">
+            <div class="header__left">
+              <div class="header__logo">
+                <img src="/src/assets/header/flipkart_logo.svg" alt="flipkart logo">
+              </div>
+              <div class="header__search">
+                <div class="header__search-icon">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                       xmlns="http://www.w3.org/2000/svg">
+                    <title>Search Icon</title>
+                    <path d="M10.5 18C14.6421 18 18 14.6421 18 10.5C18 6.35786 14.6421 3 10.5 3C6.35786 3 3 6.35786 3 10.5C3 14.6421 6.35786 18 10.5 18Z"
+                          stroke="#717478" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M16 16L21 21" stroke="#717478" stroke-width="1.4" stroke-linecap="round"
+                          stroke-linejoin="round"/>
+                  </svg>
+                </div>
+                <input id="searchInput" class="header__search-input" type="text" placeholder="Search for Products, Brands and more">
+                <ul id="dropdownList" class="header__search-dropdown"></ul>
+              </div>
+            </div>
+          
+            <div class="header__right">
+              <div class="header__right-nav header__right-nav--login">
+                <i class="fa-regular fa-circle-user"></i> Login <i class="fa-solid fa-chevron-down"></i>
+                <div class="header__dropdown header__dropdown--login">
+                  <div class="header__dropdown-customer">
+                    <p>New customer?</p>
+                    <a href="#" class="header__dropdown-signup">Sign Up</a>
+                  </div>
+                  <a href="#"><img src="/src/assets/header/my_profile.svg" alt="profile image">My Profile</a>
+                  <a href="#"><img src="/src/assets/header/flipkart_plus_zone.svg" alt="Flipkart Plus">Flipkart Plus Zone</a>
+                  <a href="#"><img src="/src/assets/header/orders.svg" alt="Orders"> Orders</a>
+                  <a href="#"><img src="/src/assets/header/wishlist.svg" alt="Wishlist"> Wishlist</a>
+                  <a href="#"><img src="/src/assets/header/rewards.svg" alt="Rewards"> Rewards</a>
+                  <a href="#"><img src="/src/assets/header/gift_cards.svg" alt="Gift Cards"> Gift Cards</a>
+                </div>
+              </div>
+          
+              <div class="header__right-nav header__right-nav--cart">
+                <img src="/src/assets/header/cart.svg" alt="Cart Icon"> <span>Cart</span>
+              </div>
+          
+              <div class="header__right-nav header__right-nav--seller">
+                <img src="/src/assets/header/seller.svg" alt="Seller icon"> <span>Become a seller</span>
+              </div>
+          
+              <div class="header__right-nav header__right-nav--more">
+                <i class="fa-solid fa-ellipsis-vertical"></i>
+                <div class="header__dropdown  more__dropdown">
+                  <a href="#"><img src="/src/assets/header/notification_preference.svg" alt="Notification"> Notification Preferences</a>
+                  <a href="#"><img src="/src/assets/header/customer_care.svg" alt="Customer Care"> 24x7 Customer Care</a>
+                  <a href="#"><img src="/src/assets/header/advertise.svg" alt="Advertisement"> Advertise</a>
+                  <a href="#"><img src="/src/assets/header/download_app.svg" alt="Download icon"> Download App</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+  </header>
+
+  <div class="category-bar">
+    <div class="category-bar__list">
+      <div class="category-bar__item">
+        <img src="assets/shop-category/grocery.png" alt="Grocery" class="category-bar__icon">
+        <p class="category-bar__name">Grocery</p>
+      </div>
+      <div class="category-bar__item">
+        <img src="assets/shop-category/mobiles.png" alt="Mobiles" class="category-bar__icon">
+        <p class="category-bar__name">Mobiles</p>
+      </div>
+      <div class="category-bar__item category-bar__item--has-menu">
+        <img src="assets/shop-category/fashion.png" alt="Fashion" class="category-bar__icon">
+        <p class="category-bar__name">Fashion <i class="fa-solid fa-chevron-down"></i></p>
+      </div>
+      <div class="category-bar__item category-bar__item--has-menu">
+        <img src="assets/shop-category/electronics.png" alt="Electronics" class="category-bar__icon">
+        <p class="category-bar__name">Electronics <i class="fa-solid fa-chevron-down"></i></p>
+      </div>
+      <div class="category-bar__item category-bar__item--has-menu">
+        <img src="assets/shop-category/home_and_furniture.png" alt="Home & Furniture" class="category-bar__icon">
+        <p class="category-bar__name">Home & Furniture <i class="fa-solid fa-chevron-down"></i></p>
+      </div>
+      <div class="category-bar__item">
+        <img src="assets/shop-category/appliances.png" alt="Appliances" class="category-bar__icon">
+        <p class="category-bar__name">Appliances</p>
+      </div>
+      <div class="category-bar__item">
+        <img src="assets/shop-category/flight_bookings.png" alt="Flight Bookings" class="category-bar__icon">
+        <p class="category-bar__name">Flight Bookings</p>
+      </div>
+      <div class="category-bar__item category-bar__item--has-menu">
+        <img src="assets/shop-category/beauty,toys_and_more.png" alt="Beauty, Toys & More" class="category-bar__icon">
+        <p class="category-bar__name">Beauty, Toys & More <i class="fa-solid fa-chevron-down"></i></p>
+      </div>
+    </div>
+  </div>
+
+<div class="hero">
+  <div class="hero__banner">
+      <div class="hero__slider" id="heroSlider">
+          <div class="hero__slide">
+              <img src="assets/banner/banner-image.png" alt="Banner image">
+          </div>
+      </div>
+      <div class="hero__slider-buttons">
+          <button class="hero__prev-btn" id="prevBtn">
+              <i class="fa-solid fa-chevron-left"></i>
+          </button>
+          <button class="hero__next-btn" id="nextBtn">
+              <i class="fa-solid fa-chevron-right"></i>
+          </button>
+      </div>
+  </div>
+  <div class="hero__dots" id="slideDots">
+      <span class="hero__dot hero__dot--active" data-index="0"></span>
+      <span class="hero__dot" data-index="1"></span>
+      <span class="hero__dot" data-index="2"></span>
+      <span class="hero__dot" data-index="3"></span>
+      <span class="hero__dot" data-index="4"></span>
+  </div>
+</div>
+
+
+  <div class="products__section">
+    <div class="products__section--content">
+      <h3 class="products__section--heading">Best of Electronics</h3>
+  
+      <div class="products__section--carousel-wrapper">
+        <div class="products__carousel">
+          <div class="products__carousel--item">
+            <img src="assets/electronics/Electronic-item1.jpeg" alt="Top Speakers" class="products__carousel--image">
+            <h4 class="products__carousel--title">Top Speakers</h4>
+            <p class="products__carousel--info">Shop Now!</p>
+          </div>
+          <div class="products__carousel--item">
+            <img src="assets/electronics/Electronic-item2.jpeg" alt="Mirrorless Cameras" class="products__carousel--image">
+            <h4 class="products__carousel--title">Top Mirrorless Cameras</h4>
+            <p class="products__carousel--info">Up to 70% Off</p>
+          </div>
+          <div class="products__carousel--item">
+            <img src="assets/electronics/Electronic-item3.jpeg" alt="ASUS Monitors" class="products__carousel--image">
+            <h4 class="products__carousel--title">ASUS Monitors</h4>
+            <p class="products__carousel--info">From ₹7,999</p>
+          </div>
+          <div class="products__carousel--item">
+            <img src="assets/electronics/Electronic-item4.jpeg" alt="Monitors" class="products__carousel--image">
+            <h4 class="products__carousel--title">Monitors</h4>
+            <p class="products__carousel--info">Min. 40% Off</p>
+          </div>
+          <div class="products__carousel--item">
+            <img src="assets/electronics/Electronic-item5.jpeg" alt="Smartwatches" class="products__carousel--image">
+            <h4 class="products__carousel--title">fastrack Smartwatches</h4>
+            <p class="products__carousel--info">Shop Now!</p>
+          </div>
+          <div class="products__carousel--item">
+            <img src="assets/electronics/Electronic-item6.jpeg" alt="Projectors" class="products__carousel--image">
+            <h4 class="products__carousel--title">Projectors</h4>
+            <p class="products__carousel--info">From ₹999</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
+
+
+   <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+@use "../mixins/mixins" as *;
+@use "../variables/variables" as *;
+
+.footer {
+  @include flex-container(center, center);
+  height: 100vh;
+
+  &__content {
+    font-size: 4vw;
+    letter-spacing: 15px;
+    color: $primary-color;
+    text-transform: uppercase;
+
+    & span {
+      display: inline-block;
+    }
+  }
+}
+
+@include responsive(1000px) {
+  .footer__content {
+    letter-spacing: 10px;
+  }
+}
+@include responsive(700px) {
+  .footer__content {
+    letter-spacing: 7px;
+  }
+}
+@include responsive(500px) {
+  .footer__content {
+    letter-spacing: 5px;
+  }
+  .about__paragraph {
+    font-size: 5vw;
+  }
+}
+
+@include responsive(300px) {
+  .footer__content {
+    letter-spacing: 3px;
+  }
+}

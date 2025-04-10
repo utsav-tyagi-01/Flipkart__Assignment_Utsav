@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Page-Assignment</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+    <link rel="stylesheet" href="../dist/products.css">
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+          <div class="header__content">
+           <div class="header__content--left">
+            <div class="header__logo--wrapper">
+                <a href="#"><img src="./assets/product_header/flipkart_logo.png" alt="flipkart logo" class="header__logo" /></a>
+                <a href="#" class="header__explore">
+                  Explore <span class="header__explore--highlight">Plus</span>
+                </a>
+                <img src="./assets/product_header/plusstar.png" alt="pluslogo" class="header__plus--icon" />
+              </div>
+    
+              <div class="header__search">
+                  <div class="header__search-input-container">
+                    <input type="text" id="searchInput"  class="header__search-input" placeholder="Search for products, brands and more " />
+                    <ul id="dropdownList" class="dropdown"></ul>
+                </div>
+                  <div class="header__search-button-wrapper">
+                    <button type="submit" class="header__search-button">
+                      <img src="./assets/product_header/searchicon.png" alt="search icon" class="header__search-icon" />
+                    </button>
+                  </div>
+              </div>
+           </div>
+  
+         <div class="header__content--right">
+            <div class="header__login">
+                <a href="#">Login</a>
+              </div>
+    
+              <a href="#" class="header__seller"><span>Become a Seller</span></a>
+    
+              <a href="#" class="header__more">
+                More
+                <img src="./assets/product_header/dropdown.png" alt="menu" class="header__dropdown-icon" />
+              </a>
+    
+              <a href="#" class="header__cart">
+                <img src="./assets/product_header/Cart.png" alt="Shopping Cart" class="header__cart-icon" />
+                <span class="header__cart-text">Cart</span>
+              </a>
+         </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="category__header">
+        <div class="category__item">
+             <span>Electronics <i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+        <div class="category__item">
+           <span>TVs & Appliances <i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+        <div class="category__item">
+           <span>Men <i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+        <div class="category__item">
+          <span>Women <i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+        <div class="category__item">
+          <span>Baby & Kids <i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+        <div class="category__item">
+          <span>Home & Furniture <i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+        <div class="category__item">
+          <span>Sports, Books & More <i class="fa-solid fa-chevron-down"></i></span>
+        </div>
+        <div class="category__item">
+            <span>Flights</span>
+          </div>
+          <div class="category__item">
+            <span>Offer Zone</span>
+          </div>
+      </div>
+  
+    <div class="search__results__container">
+        <div class="filters">
+         <div class="filter__top">
+          <h3>Filters</h3>
+          <div class="filter__actions">
+            <button id="clearAllBtn">Clear All</button>
+          </div>
+          
+         </div>
+        
+          
+          <div class="filters__container">
+          
+            <div class="filter__section">
+              <h3 class="filter__title">CATEGORIES</h3>
+              <label><input type="checkbox" class="filter-checkbox" data-type="category" value="men footwear"> Men Footwear</label>
+              <label><input type="checkbox" class="filter-checkbox" data-type="category" value="sports shoes"> Sports Shoes</label>
+              <label><input type="checkbox" class="filter-checkbox" data-type="category" value="casual shoes"> Casual Shoes</label>
+
+            </div>
+          
+            <div class="filter__section">
+              <h3 class="filter__title">PRICE</h3>
+              <input type="range" min="500" max="500000" step="100" value="500000" id="priceRange">
+              <div class="price-range">
+                <span>Min: ₹500</span>
+                <span>Max: ₹500000</span>
+              </div>
+            </div>
+          
+            <div class="accordion__filter">
+                <div class="filter__section accordion__item active">
+                    <h3 class="filter__title accordion__header">BRAND</h3>
+                    <div class="accordion__body">
+
+                    <label><input type="checkbox"  class="filter-checkbox" data-type="brand"  value="Nike"> Nike</label>
+                    <label><input type="checkbox"  class="filter-checkbox" data-type="brand"  value="Adidas"> Adidas</label>
+                    <label><input type="checkbox"  class="filter-checkbox" data-type="brand"  value="Puma"> Puma</label>
+                    <label><input type="checkbox"  class="filter-checkbox" data-type="brand"  value="Reebok"> Reebok</label>
+                    </div>
+                  </div>
+            </div>
+          
+            <div class="filter__section accordion__item active">
+              <h3 class="filter__title accordion__header">CUSTOMER RATINGS</h3>
+              <div class="accordion__body">
+                <label><input type="checkbox" class="filter-checkbox" data-type="rating" value="4"> 4★ & above</label>
+                <label><input type="checkbox" class="filter-checkbox" data-type="rating" value="3"> 3★ & above</label>
+                <label><input type="checkbox" class="filter-checkbox" data-type="rating" value="2"> 2★ & above</label>
+                
+           
+              </div>
+            </div>
+          
+            <div class="filter__section accordion__item active">
+              <h3 class="filter__title accordion__header">COLOR</h3>
+               <div class="accordion__body">
+                <label><input type="checkbox" class="filter-checkbox" data-type="color" value="black"> Black</label>
+                <label><input type="checkbox" class="filter-checkbox" data-type="color" value="white"> White</label>
+                
+            
+               </div>
+            </div>
+          
+            <div class="filter__section accordion__item">
+              <h3 class="filter__title accordion__header">DISCOUNT</h3>
+              <div class="accordion__body">
+                <label><input type="checkbox" class="filter-checkbox" data-type="discount" value="50"> 50% or more</label>
+                <label><input type="checkbox" class="filter-checkbox" data-type="discount" value="40"> 40% or more</label>
+                <label><input type="checkbox" class="filter-checkbox" data-type="discount" value="30"> 30% or more</label>
+                
+         
+              </div>
+            </div>
+          
+            <div class="filter__section accordion__item">
+              <h3 class="filter__title accordion__header">AVAILABILITY</h3>
+               <div class="accordion__body">
+                <label><input type="checkbox" class="filter-checkbox" data-type="availability" value="Include Out of Stock"> Include Out of Stock</label>
+            
+               </div>
+            </div>
+          </div>
+          
+        </div>
+      
+        
+        <div class="product__main">
+
+          <div class="sort__results--bar">
+            <div class="breadcrumbs">Home > <span id="categoryName"></span></div>
+            <div class="results__count" id="resultsCount"><span id="searchTerm"></span></div>
+            <div class="sort__options">
+              <span>Sort By</span>
+              <button class="sort__btn active" data-sort="relevance">Relevance</button>
+              <button class="sort__btn" data-sort="popularity">Popularity</button>
+              <button class="sort__btn" data-sort="priceLow">Price -- Low to High</button>
+              <button class="sort__btn" data-sort="priceHigh">Price -- High to Low</button>
+              <button class="sort__btn" data-sort="newest">Newest First</button>
+            </div>
+          </div>
+          <div class="products" id="productContainer">
+        
+
+
+          </div>
+        </div>
+      </div>
+
+      
+
+      <script src="product.js"></script>
+      
+  
+</body>
+</html>

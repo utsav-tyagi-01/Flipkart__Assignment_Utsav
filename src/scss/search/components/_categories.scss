@@ -1,0 +1,31 @@
+
+@use "../variables/categories-variables" as *;
+@use "../mixins/categories-mixins" as *;
+
+.category__item {
+  @include flex-center(column, center, center);
+  margin: 0 15px;
+  cursor: pointer;
+
+  img {
+    width: $icon-size;
+    height: $icon-size;
+    object-fit: contain;
+    margin-bottom: 5px;
+  }
+
+  span {
+    font-size: $font-size-small;
+    color: $primary-color;
+    font-weight: $font-weight-medium;
+  }
+}
+
+.category__header {
+  @include flex-center(row, space-between, center);
+  padding: $padding-header $padding-header-side;
+  background-color: $background-color;
+  border-top: 1px solid $border-color;
+  @include box-shadow($box-shadow-color);
+  overflow-x: auto;
+}
