@@ -106,7 +106,7 @@ function positionDropdown(input, dropdown) {
   dropdown.style.left = `${input.offsetLeft}px`;
   dropdown.style.width = `${input.offsetWidth}px`;
   dropdown.style.display = "block";
-  dropdown.style.display = "block";
+  dropdown.style.zIndex = "9";
  }
 }
 
