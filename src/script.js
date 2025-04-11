@@ -1,44 +1,7 @@
 const searchInputs = document.querySelectorAll(".header__search-input");
 const dropdownList = document.querySelectorAll(".header__search-dropdown");
 
-const moreButton = document.querySelector('.header__right-nav--more');
-const loginButton = document.querySelector('.header__right-nav--login');
-const moreDropdown = document.querySelector('.more__dropdown');
-const loginDropdown = document.querySelector('.header__dropdown--login');
 
-const showDropdown = (dropdown) => {
-    dropdown.style.display = 'block';
-};
-
-const hideDropdown = (dropdown) => {
-    dropdown.style.display = 'none';
-};
-
-const handleMouseEnter = (button, dropdown) => {
-    button.addEventListener('mouseenter', () => {
-        showDropdown(dropdown);
-    });
-
-    dropdown.addEventListener('mouseenter', () => {
-        showDropdown(dropdown);
-    });
-};
-
-const handleMouseLeave = (button, dropdown) => {
-    button.addEventListener('mouseleave', () => {
-        hideDropdown(dropdown);
-    });
-
-    dropdown.addEventListener('mouseleave', () => {
-        hideDropdown(dropdown);
-    });
-};
-
-handleMouseEnter(moreButton, moreDropdown);
-handleMouseEnter(loginButton, loginDropdown);
-
-handleMouseLeave(moreButton, moreDropdown);
-handleMouseLeave(loginButton, loginDropdown);
 
 const trendingSearches = ["mobiles", "shoes", "t shirts", "laptops", "watches", "tv"];
 let latestQuery = "";
