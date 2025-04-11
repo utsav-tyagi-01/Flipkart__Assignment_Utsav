@@ -1,15 +1,17 @@
+@use "../variables/variables" as *;
+
 .filters__container {
   width: 100%;
-  background-color: #fff;
+  background-color: $white;
   font-family: Arial, sans-serif;
 }
 
 .filter__top{
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: $spacing-margin-bottom-md;
   padding:16px 16px 0px 16px;
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid $hover-bg-color;
 
 
   h3{
@@ -20,11 +22,10 @@
 
 .filters__heading {
   font-size: 18px;
-  font-weight: 600;
+  font-weight: $font-weight-lg;
   margin-bottom: 10px;
-  color: #212121;
+  color: $black;
   padding: 0 0 10px;
-  // border-bottom: 1px solid #e0e0e0;
 }
 
 .filter__actions {
@@ -36,9 +37,9 @@
   #clearAllBtn {
     background: none;
     border: none;
-    color: #2874f0;
+    color: $primary-color;
     font-size: 12px;
-    font-weight: 500;
+    font-weight: $font-weight-md;
     cursor: pointer;
     display: none;
     text-transform: uppercase;
@@ -52,33 +53,35 @@
 .filter__section {
   margin-bottom: 20px;
   padding: 2px 16px;
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid $hover-bg-color;
+
+  label {
+    display: block;
+    font-size: 13px;
+    color:$black-shade-2 ;
+    margin-bottom: 8px;
+    cursor: pointer;
+  
+    input[type="checkbox"] {
+      margin-right: 8px;
+    }
+  }
 }
 
 .filter__title {
   font-size: 14px;
-  font-weight: 600;
-  color:  #1f1c1c;
+  font-weight: $font-weight-lg;
+  color: $black-shade-1  ;
   margin-bottom: 10px;
 }
 
-.filter__section label {
-  display: block;
-  font-size: 13px;
-  color: #212121;
-  margin-bottom: 8px;
-  cursor: pointer;
 
-  input[type="checkbox"] {
-    margin-right: 8px;
-  }
-}
 
 .price-range {
   display: flex;
   justify-content: space-between;
   font-size: 12px;
-  color: #878787;
+  color:$text-color-1 ;
   margin-top: 5px;
 }
 
@@ -88,7 +91,6 @@ input[type="range"] {
 }
 
 .accordion__item {
-  // border-top: 1px solid #e0e0e0;
   margin-bottom: 10px;
 }
 
@@ -96,11 +98,11 @@ input[type="range"] {
   padding: 10px 0;
   width: 100%;
   border: none;
-  font-weight: 500;
+  font-weight: $font-weight-md;
   text-transform: uppercase;
   letter-spacing: .3px;
-  font-size: 13px;
-  color: #0f0d0d;
+  font-size: $font-size-sm;
+  color: $black;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -108,7 +110,7 @@ input[type="range"] {
   &:after {
     content: "⌄";
     font-size: 12px;
-    color: #878787;
+    color: $text-color-1;
     transition: transform 0.2s ease;
   }
 }
@@ -133,18 +135,20 @@ input[type="range"] {
 
 .filters {
   width: 20%;
-  background: white;
+  background: $white;
   
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  border-right: 1px solid #e0e0e0;
+  box-shadow: 0 2px 8px $filter-box-shadow ;
+  border-right: 1px solid $border-color-filter;
 
   h3 {
     margin-top: 0;
   }
+
+ 
 }
 
 .filter-group {
-  margin-bottom: 20px;
+  margin-bottom: $spacing-margin-bottom-md;
 
   label {
     display: block;
@@ -165,7 +169,7 @@ input[type="range"] {
   width: 100%;
   height: 8px;
   border-radius: 5px;
-  background: #007aff;
+  background-color:$color-slider;
   outline: none;
   margin-bottom: 10px;
 }
@@ -176,7 +180,7 @@ input[type="range"] {
   width: 18px;
   height: 18px;
   background: white;
-  border: 2px solid #007aff;
+  border: 2px solid $color-slider;
   border-radius: 50%;
   cursor: pointer;
 }
@@ -184,8 +188,8 @@ input[type="range"] {
 .slider::-moz-range-thumb {
   width: 18px;
   height: 18px;
-  background: white;
-  border: 2px solid #007aff;
+  background: $white;
+  border: 2px solid $color-slider;
   border-radius: 50%;
   cursor: pointer;
 }
@@ -200,6 +204,121 @@ input[type="range"] {
 .price-inputs select {
   padding: 5px;
   border-radius: 4px;
-  border: 1px solid #ccc;
+  border: 1px solid $price-color-input;
   font-size: 14px;
 }
+
+
+@media (max-width: 768px) {
+  .search__results__container {
+    flex-direction: column;
+  }
+
+  .filters {
+    width: 100%;
+    overflow-x: auto;
+    display: flex;
+    gap: 10px;
+    position: relative;
+    z-index: 2;
+    border-right: none;
+    box-shadow: none;
+    scroll-snap-type: x mandatory;
+    max-height: 200px;
+      overflow-y: auto;
+      background: $white;
+      padding: 0;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  
+      &__categories{
+        display: none;
+      }
+  }
+
+  .filters__container {
+    display: flex;
+    flex-direction: row;
+    width: max-content;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 10px 16px;
+
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .filter__section,
+  .accordion__item {
+    min-width: 160px;
+    max-width: 200px;
+    flex: 0 0 auto;
+    border: 1px solid $border-color-filter;
+    background-color: $white;
+    scroll-snap-align: start;
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
+    border-radius: 6px;
+    height: 40px;
+  }
+
+  .accordion__header:after {
+    transform: rotate(0deg); 
+  }
+
+  .accordion__item .accordion__body {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: $white;
+    border: 1px solid $border-color-filter;
+    z-index: 10;
+    padding: 8px;
+  }
+
+  .accordion__item.active .accordion__body {
+    display: block;
+  }
+
+  .product__main {
+    width: 100%;
+    padding-left: 0;
+  }
+
+  .sort__results--bar {
+    padding-left: 10px;
+  }
+  .filter__top {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: $white;
+    padding: 10px 16px;
+    border-bottom: 1px solid $border-color-filter;
+    box-shadow: 0 2px 4px $filter-box-shadow;
+    margin-bottom: 0px;
+    flex-direction: column;
+  }
+  .accordion__body {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: $white;
+    z-index: 5;
+    width: 100%;
+    border: 1px solid $price-color-input;
+    width: 90%;
+  }
+
+   .filter__price{
+    border: 1px hidden;
+  }
+}
+ 

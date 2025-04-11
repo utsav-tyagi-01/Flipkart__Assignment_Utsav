@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   
     <title>Product Page-Assignment</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,6 +19,16 @@
         <div class="header">
           <div class="header__content">
            <div class="header__content--left">
+            <div class="header__hamburger">
+              <i class="fa-solid fa-bars"></i>
+              <div class="header__hamburger-menu">
+                <a href="#"><img src="/src/assets/header/seller.svg" alt="Seller icon"> Become a seller</a>
+                <a href="#"><img src="/src/assets/header/notification_preference.svg" alt="Notification"> Notification Preferences</a>
+                <a href="#"><img src="/src/assets/header/customer_care.svg" alt="Customer Care"> 24x7 Customer Care</a>
+                <a href="#"><img src="/src/assets/header/advertise.svg" alt="Advertise"> Advertise</a>
+                <a href="#"><img src="/src/assets/header/download_app.svg" alt="Download"> Download App</a>
+              </div>
+            </div>
             <div class="header__logo--wrapper">
                 <a href="#"><img src="./assets/product_header/flipkart_logo.png" alt="flipkart logo" class="header__logo" /></a>
                 <a href="#" class="header__explore">
@@ -27,7 +39,7 @@
     
               <div class="header__search">
                   <div class="header__search-input-container">
-                    <input type="text" id="searchInput"  class="header__search-input" placeholder="Search for products, brands and more " />
+                     <input autocomplete="off" type="text" autocomplete="off" id="searchInput" autocomplete="off"  class="header__search-input" placeholder="Search for products, brands and more " />
                     <ul id="dropdownList" class="dropdown"></ul>
                 </div>
                   <div class="header__search-button-wrapper">
@@ -91,31 +103,32 @@
   
     <div class="search__results__container">
         <div class="filters">
-         <div class="filter__top">
-          <h3>Filters</h3>
-          <div class="filter__actions">
-            <button id="clearAllBtn">Clear All</button>
-          </div>
+          <div class="filter__top">
+            <h3>Filters</h3>
+            <div class="filter__actions">
+              <button id="clearAllBtn">Clear All</button>
+            </div>
+        
           
          </div>
         
           
           <div class="filters__container">
           
-            <div class="filter__section">
-              <h3 class="filter__title">CATEGORIES</h3>
-              <label><input type="checkbox" class="filter-checkbox" data-type="category" value="men footwear"> Men Footwear</label>
-              <label><input type="checkbox" class="filter-checkbox" data-type="category" value="sports shoes"> Sports Shoes</label>
-              <label><input type="checkbox" class="filter-checkbox" data-type="category" value="casual shoes"> Casual Shoes</label>
+            <div class="filter__section filters__categories">
+              <h3 class="filter__title ">CATEGORIES</h3>
+              <label> <input autocomplete="off"type="checkbox" class="filter-checkbox" data-type="category" value="touchpad"> Touchpad</label>
+              <label> <input autocomplete="off"type="checkbox" class="filter-checkbox" data-type="category" value="keypad"> Keypad</label>
+              <label> <input autocomplete="off"type="checkbox" class="filter-checkbox" data-type="category" value="flip phone"> Flip Phone</label>
 
             </div>
           
-            <div class="filter__section">
+            <div class="filter__section filter__price">
               <h3 class="filter__title">PRICE</h3>
-              <input type="range" min="500" max="500000" step="100" value="500000" id="priceRange">
+               <input autocomplete="off"type="range" min="500" max="500000" step="100" value="500000" id="priceRange">
               <div class="price-range">
                 <span>Min: ₹500</span>
-                <span>Max: ₹500000</span>
+                <span id="maxPrice">Max: ₹500000</span>
               </div>
             </div>
           
@@ -124,10 +137,10 @@
                     <h3 class="filter__title accordion__header">BRAND</h3>
                     <div class="accordion__body">
 
-                    <label><input type="checkbox"  class="filter-checkbox" data-type="brand"  value="Nike"> Nike</label>
-                    <label><input type="checkbox"  class="filter-checkbox" data-type="brand"  value="Adidas"> Adidas</label>
-                    <label><input type="checkbox"  class="filter-checkbox" data-type="brand"  value="Puma"> Puma</label>
-                    <label><input type="checkbox"  class="filter-checkbox" data-type="brand"  value="Reebok"> Reebok</label>
+                    <label> <input autocomplete="off"type="checkbox"  class="filter-checkbox" data-type="brand"  value="Apple"> Apple</label>
+                    <label> <input autocomplete="off"type="checkbox"  class="filter-checkbox" data-type="brand"  value="Samsung"> Samsung</label>
+                    <label> <input autocomplete="off"type="checkbox"  class="filter-checkbox" data-type="brand"  value="Redmi"> Redmi</label>
+                    <label> <input autocomplete="off"type="checkbox"  class="filter-checkbox" data-type="brand"  value="Opp0"> Oppo</label>
                     </div>
                   </div>
             </div>
@@ -135,9 +148,9 @@
             <div class="filter__section accordion__item active">
               <h3 class="filter__title accordion__header">CUSTOMER RATINGS</h3>
               <div class="accordion__body">
-                <label><input type="checkbox" class="filter-checkbox" data-type="rating" value="4"> 4★ & above</label>
-                <label><input type="checkbox" class="filter-checkbox" data-type="rating" value="3"> 3★ & above</label>
-                <label><input type="checkbox" class="filter-checkbox" data-type="rating" value="2"> 2★ & above</label>
+                <label> <input autocomplete="off"type="checkbox" class="filter-checkbox" data-type="rating" value="4"> 4★ & above</label>
+                <label> <input autocomplete="off"type="checkbox" class="filter-checkbox" data-type="rating" value="3"> 3★ & above</label>
+                <label> <input autocomplete="off"type="checkbox" class="filter-checkbox" data-type="rating" value="2"> 2★ & above</label>
                 
            
               </div>
@@ -146,8 +159,8 @@
             <div class="filter__section accordion__item active">
               <h3 class="filter__title accordion__header">COLOR</h3>
                <div class="accordion__body">
-                <label><input type="checkbox" class="filter-checkbox" data-type="color" value="black"> Black</label>
-                <label><input type="checkbox" class="filter-checkbox" data-type="color" value="white"> White</label>
+                <label> <input autocomplete="off"type="checkbox" class="filter-checkbox" data-type="color" value="black"> Black</label>
+                <label> <input autocomplete="off"type="checkbox" class="filter-checkbox" data-type="color" value="white"> White</label>
                 
             
                </div>
@@ -156,9 +169,9 @@
             <div class="filter__section accordion__item">
               <h3 class="filter__title accordion__header">DISCOUNT</h3>
               <div class="accordion__body">
-                <label><input type="checkbox" class="filter-checkbox" data-type="discount" value="50"> 50% or more</label>
-                <label><input type="checkbox" class="filter-checkbox" data-type="discount" value="40"> 40% or more</label>
-                <label><input type="checkbox" class="filter-checkbox" data-type="discount" value="30"> 30% or more</label>
+                <label> <input autocomplete="off"type="checkbox" class="filter-checkbox" data-type="discount" value="50"> 50% or more</label>
+                <label> <input autocomplete="off"type="checkbox" class="filter-checkbox" data-type="discount" value="40"> 40% or more</label>
+                <label> <input autocomplete="off"type="checkbox" class="filter-checkbox" data-type="discount" value="30"> 30% or more</label>
                 
          
               </div>
@@ -167,7 +180,7 @@
             <div class="filter__section accordion__item">
               <h3 class="filter__title accordion__header">AVAILABILITY</h3>
                <div class="accordion__body">
-                <label><input type="checkbox" class="filter-checkbox" data-type="availability" value="Include Out of Stock"> Include Out of Stock</label>
+                <label> <input autocomplete="off"type="checkbox" class="filter-checkbox" data-type="availability" value="Include Out of Stock"> Include Out of Stock</label>
             
                </div>
             </div>
@@ -190,7 +203,7 @@
               <button class="sort__btn" data-sort="newest">Newest First</button>
             </div>
           </div>
-          <div class="products" id="productContainer">
+          <div class="products temp" id="productContainer">
         
 
 

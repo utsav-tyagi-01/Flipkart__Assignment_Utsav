@@ -1,10 +1,10 @@
-// @use "../variables/variables" as *;
-// @use "../mixins/mixins" as *;
+@use "../variables/variables" as *;
+@use "../mixins/mixins" as *;
 
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
-  background-color: #f1f3f6;
+  background-color: $light-gray;
 }
 
 a {
@@ -13,38 +13,87 @@ a {
 .header {
   max-width: 90rem;
   height: 50px;
-  background-color: #2874f0;
+  background-color: $primary-color;
   position: sticky;
   top: 0;
   z-index: 9999;
   
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 10px $color-hero-dot;
+  &__hamburger {
+    display: none; 
+    position: relative;
+    margin-right: 15px;
+  
+    i {
+      font-size: $font-size-large;
+      color: $black;
+      cursor: pointer;
+      padding: 10px;
+    }
+  
+    &-menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: $white;
+      border-radius: $border-radius-sm;
+      width: 250px;
+      z-index: 1000;
+      padding: 10px;
+  
+      a {
+        display: flex;
+        align-items: center;
+        gap: $gap-sm;
+        padding: 10px;
+        text-decoration: none;
+        color: $black;
+        border-radius: 4px;
+  
+        img {
+          width: 20px;
+          height: 20px;
+        }
+      }
+  
+      &.show {
+        display: flex;
+      }
+    }
+    @media (max-width: 768px) {
+        display: flex;
+        align-items: center;
+    
+      
+    }
+  }
 
   &__content {
-    background-color: #2874f0;
+    background-color: $primary-color;
     height: 50px;
     display: flex;
     padding: 3px 100px;
     justify-content: space-around;
-    &--left{
+
+    @media (max-width:1192px){
+      padding: 3px 10px;
+    }
+    &--left, &--right{
       display: flex;
       justify-content: space-around;
       gap: 50px;
       align-items: center;
     }
 
-    &--right{
-      display: flex;
-      justify-content: space-around;
-      gap: 50px;
-      align-items: center;
-     
-      
-    @media (max-width:480px) {
-      display: none !important;
-      color: red;
-      background-color: #2874f0;
-    }
+    &--right{     
+      @media (max-width:1028px){
+        gap:12px;
+      }
+     @media (max-width:768px) {
+      display: none;
+     }
     }
     
   }
@@ -68,7 +117,7 @@ a {
     font-size: 11px;
     font-style: italic;
     font-weight: 600;
-    color: white;
+    color: $white;
     position: absolute;
     top: 31px;
     width: 75px;
@@ -76,7 +125,7 @@ a {
     left: 36px;
 
     &--highlight {
-      color: #ffe500;
+      color: $main-yellow;
       font-weight: bold;
     }
   }
@@ -106,34 +155,24 @@ a {
       display: flex;
     }
 
-    &-input-container {
-      flex: 1;
-      height: 30px;
-    }
 
     &-input {
       width: 100%;
       height: 30px;
-      color: grey;
+      color: $secondary-color;
       padding-left: 20px;
-      font-weight: 500;
+      font-weight: $font-weight-md;
       font-size: 14px;
       position: relative;
+
+      &-container {
+        flex: 1;
+        height: 30px;
+      }
 
       &:focus {
         outline: none;
       }
-    }
-
-    &-button-wrapper {
-      width: 40px;
-      height: 30px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: transparent;
-      padding: 0;
-      position: relative;
     }
 
     &-button {
@@ -145,6 +184,17 @@ a {
       display: flex;
       align-items: center;
       justify-content: center;
+
+      &-wrapper {
+        width: 40px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: transparent;
+        padding: 0;
+        position: relative;
+      }
     }
 
     &-icon {
@@ -163,38 +213,34 @@ a {
     align-items: center;
     a {
       text-align: center;
-      color: #2874f0;
+      color: $primary-color;
       cursor: pointer;
-      font-weight: 600;
-      font-size: 16px;
+      font-weight: $font-weight-lg;
+      font-size: $font-size-base;
       display: flex;
       justify-content: center;
       align-items: center;
       width: 121.1px;
       height: 30px;
-      background-color: white;
+      background-color: $white;
     }
 
     span {
       letter-spacing: 0.1px;
       font-weight: bold;
-      border: 1px solid white;
-    
+      border: 1px solid $white;
       bottom: 5px;
-    
-      color: #2874f0;
+      color: $primary-color;
     }
-
-  
   }
 
   &__seller {
-    font-size: 16px;
+    font-size: $font-size-base;
     font-weight: bold;
     font-family: Roboto, Arial, sans-serif;
    
     top: 17px;
-    color: white;
+    color: $white;
     letter-spacing: 0.1px;
     width: 115px;
     display: flex;
@@ -207,9 +253,8 @@ a {
     font-size: 16px;
     font-weight: bold;
     font-family: Roboto, Arial, sans-serif;
-  
     top: 16px;
-    color: white;
+    color: $white;
     letter-spacing: 0.1px;
     width: 115px;
     justify-content: center;
@@ -222,7 +267,6 @@ a {
   }
 
   &__dropdown-icon {
-
     top: 5px;
     width: 10px;
   }
@@ -247,13 +291,11 @@ a {
     }
 
     &-text {
-
       top: 5px;
       font-size: 16px;
       font-weight: bold;
-      color: white;
+      color: $white;
     }
-    
     
   }
   
@@ -262,8 +304,8 @@ a {
     top: 60%;
     left: 0;
     width: 94%;
-    background-color: #fff;
-    border: 1px solid #ccc;
+    background-color: $background-color;
+    border: 1px solid $drop-down-color;
     border-top: none;
     z-index: 10;
     display: none;
@@ -279,12 +321,12 @@ a {
       gap: 8px;
   
       &:hover {
-        background-color: gray;
+        background-color: $wishlist-color;
       }
   
       &:first-child {
         font-weight: bold;
-        color: #666;
+        color: $secondary-color;
         cursor: default;
       }
     }
@@ -293,8 +335,6 @@ a {
 
 @media screen and (max-width: 1198px) {
   .header {
-   
-
     &__cart{
       display: none;
     }
@@ -303,8 +343,6 @@ a {
 
 @media screen and (max-width: 1024px) {
   .header {
-   
-
     &__more{
       display: none;
     }
@@ -313,138 +351,87 @@ a {
 
 @media screen and (max-width: 768px) {
   .header {
+    height: 120px;
+
     &__content {
       flex-direction: column;
-      align-items: flex-start;
-      padding: 10px 20px;
-      height: auto;
-
-      &--left,
-      &--right {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-        width: 100%;
-      }
+      align-items: stretch;
+      padding: 5px 10px;
+      gap: 5px;
+      flex-wrap: wrap;
     }
 
-    &__logo--wrapper,
-    &__explore,
+    &__logo{
+      top:17.8px;
+      right:30px;
+    }
+
+    &__content--left {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      flex: 1;
+    }
+
+    &__logo--wrapper {
+      position: static;
+      display: flex;
+      align-items: center;
+    }
+
+    &__explore {
+      margin-left: 5px;
+      font-size: 11px;
+      top:39px;
+      right:31px;
+      left:unset;
+    }
+
     &__plus--icon {
+      margin-left: 2px;
+      width: 10px;
+      height: 10px;
+      right: 33px;
+      top: 39px;
+      left: unset;
+      
+    }
+
+    &__cart {
       position: static;
     }
 
     &__search {
       width: 100%;
-      justify-content: flex-start;
+      max-width: 100%;
+      flex: none;
+      order: 2;
 
-      &-button-wrapper {
-        position: static;
-        margin-left: 5px;
-      }
-
-      &-icon {
-        position: static;
-        width: 18px;
-        height: 18px;
-      }
-
-      &-input {
-        width: 100%;
-        padding: 5px 10px;
+      &-icon{
+        top:16px;
+        right:36px;
+        left:unset;
       }
     }
 
-    &__login {
-      a {
-        width: auto;
-        font-size: 14px;
-        padding: 6px 12px;
-      }
-    }
-
-    &__seller,
-    &__more,
-    &__cart {
-      font-size: 14px;
-      width: 100%;
-      justify-content: flex-start;
-    }
-
-   
-  }
-   .header {
-    &__content--left {
-      flex-direction: column;
-      align-items: stretch;
-      gap: 10px;
+    &__search-input-container {
       width: 100%;
     }
 
-    &__search {
+    &__search-input {
       width: 100%;
-      flex-direction: row;
-      align-items: center;
-
-      &-form {
-        width: 100%;
-      }
-
-      &-input {
-        font-size: 14px;
-        padding-left: 10px;
-      }
-
-      &-icon {
-        width: 18px;
-        height: 18px;
-      }
     }
-  }
-}
 
-@media screen and (max-width: 480px) {
-  .header {
-    &__content {
-      padding: 10px;
+    &__search-button-wrapper {
+      position: static;
 
-      &--right{
+    }
+
+    &__content--right {
       display: none;
-      }
     }
-
-    &__search {
-      flex-direction: column;
-      align-items: stretch;
-
-      &-input {
-        font-size: 12px;
-      }
-    }
-
-    &__explore {
-      font-size: 10px;
-    }
-
-    &__plus--icon {
-      width: 8px;
-      height: 8px;
-    }
-
-    &__cart-icon {
-      width: 20px;
-      height: 20px;
-    }
-
-    &__cart-text {
-      font-size: 14px;
-    }
-
-
   }
 }
-
-
-
-
-
