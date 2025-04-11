@@ -96,7 +96,7 @@ function positionDropdown(input, dropdown) {
   dropdown.style.top = `${window.scrollY + rect.bottom}px`;
   dropdown.style.left = `${rect.left}px`;
   dropdown.style.width = `${rect.width}px`;
-  dropdown.style.zIndex = "999";
+  dropdown.style.zIndex = "9";
   dropdown.style.display = "block";
  }
  else{
@@ -106,7 +106,7 @@ function positionDropdown(input, dropdown) {
   dropdown.style.left = `${input.offsetLeft}px`;
   dropdown.style.width = `${input.offsetWidth}px`;
   dropdown.style.display = "block";
-  dropdown.style.zIndex = "9";
+  dropdown.style.zIndex = "999";
  }
 }
 
