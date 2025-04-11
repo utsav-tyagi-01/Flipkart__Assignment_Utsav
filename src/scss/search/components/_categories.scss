@@ -1,7 +1,5 @@
-
-@use "../variables/categories-variables" as *;
-@use "../mixins/categories-mixins" as *;
-
+@use "../variables/variables" as *;
+@use "../mixins/mixins" as *;
 .category__item {
   @include flex-center(column, center, center);
   margin: 0 15px;
@@ -29,3 +27,22 @@
   @include box-shadow($box-shadow-color);
   overflow-x: auto;
 }
+
+@media (max-width: 1192px) {
+  .category__header {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  .category__item {
+    flex: 0 0 auto;
+  }
+}
+

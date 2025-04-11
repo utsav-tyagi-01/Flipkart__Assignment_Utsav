@@ -1,85 +1,31 @@
+@use "../variables/variables" as *;
+
 .outer-container {
-    background-color: #f5f5f5;
+    background-color: $color-bg-light;
     padding: 90px 20px 20px;
   }
   
-  .category-bar {
-    background-color: white;
-    padding: 16px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    margin-bottom: 20px;
-    border-radius: 10px;
-  
-    &__list {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-  
-    &__item {
-      cursor: pointer;
-      position: relative;
-      text-align: center;
-      color: black;
-      margin: 0 21px;
-  
-      &:hover .category-bar__icon {
-        transform: scale(1.1);
-      }
-  
-      &:hover .category-bar__name {
-        color: blue;
-      }
-  
-      &:hover .category-bar__name .fa-chevron-down {
-        color: rgb(66, 66, 255);
-        transform: rotate(180deg);
-      }
-    }
-  
-    &__icon {
-      width: 60px;
-      height: auto;
-      display: block;
-      margin: 0 auto 10px;
-      transition: transform 0.3s ease;
-    }
-  
-    &__name {
-      font-size: 1rem;
-  
-      i {
-        font-size: 0.8rem;
-        vertical-align: middle;
-        transform: translateY(-2px);
-        transition: transform 0.3s ease;
-      }
-    }
 
-}
 
 .category-bar {
-  background-color: white;
-  padding: 16px;
+  background-color: $color-bg-light;
+  padding: $spacing-padding-md;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin-bottom: 20px;
-  border-radius: 10px;
+  margin-bottom: $spacing-margin-bottom-md;
+  border-radius: $border-radius-md;
 
   &__list {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    // flex-wrap: wrap;
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1024px) {
       overflow-x: auto; 
       -webkit-overflow-scrolling: touch;  
       flex-wrap: nowrap;  
-      gap: 16px; 
+      gap: $spacing-gap-sm; 
     }
   }
 
@@ -87,7 +33,7 @@
     cursor: pointer;
     position: relative;
     text-align: center;
-    color: black;
+    color: $color-text-primary;
     margin: 0 21px;
 
     &:hover .category-bar__icon {
@@ -95,21 +41,21 @@
     }
 
     &:hover .category-bar__name {
-      color: blue;
+      color: $color-text-hover;
     }
 
     &:hover .category-bar__name .fa-chevron-down {
-      color: rgb(66, 66, 255);
+      color: $color-icon-hover;
       transform: rotate(180deg);
     }
 
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 992px) {
       flex: 0 0 auto; 
     }
   }
 
   &__icon {
-    width: 60px;
+    width: $icon-size-lg;
     height: auto;
     display: block;
     margin: 0 auto 10px;
@@ -117,10 +63,10 @@
   }
 
   &__name {
-    font-size: 1rem;
+    font-size: $font-size-base;
 
     i {
-      font-size: 0.8rem;
+      font-size: $font-size-sm;
       vertical-align: middle;
       transform: translateY(-2px);
       transition: transform 0.3s ease;

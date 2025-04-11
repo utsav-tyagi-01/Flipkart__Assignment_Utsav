@@ -18,6 +18,16 @@
     <header>
         <div class="header__container">
             <div class="header__left">
+              <div class="header__hamburger">
+                <i class="fa-solid fa-bars"></i>
+                <div class="header__hamburger-menu">
+                  <a href="#"><img src="assets/header/seller.svg" alt="Seller icon"> Become a seller</a>
+                  <a href="#"><img src="assets/header/notification_preference.svg" alt="Notification"> Notification Preferences</a>
+                  <a href="#"><img src="assets/header/customer_care.svg" alt="Customer Care"> 24x7 Customer Care</a>
+                  <a href="#"><img src="assets/header/advertise.svg" alt="Advertise"> Advertise</a>
+                  <a href="#"><img src="assets/header/download_app.svg" alt="Download"> Download App</a>
+                </div>
+              </div>
               <div class="header__logo">
                 <img src="assets/header/flipkart_logo.svg" alt="flipkart logo">
               </div>
@@ -32,10 +42,13 @@
                           stroke-linejoin="round"/>
                   </svg>
                 </div>
-                <input id="searchInput" class="header__search-input" type="text" placeholder="Search for Products, Brands and more">
+                <input id="searchInput" autocomplete="off" class="header__search-input" type="text" placeholder="Search for Products, Brands and more">
                 <ul id="dropdownList" class="header__search-dropdown"></ul>
               </div>
+              
+              
             </div>
+            
           
             <div class="header__right">
               <div class="header__right-nav header__right-nav--login">
@@ -75,7 +88,23 @@
           </div>
           
   </header>
-
+  <div class="mobile-search">
+    <div class="mobile-search__wrapper">
+      <div class="mobile-search__icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+             xmlns="http://www.w3.org/2000/svg">
+          <title>Search Icon</title>
+          <path d="M10.5 18C14.6421 18 18 14.6421 18 10.5C18 6.35786 14.6421 3 10.5 3C6.35786 3 3 6.35786 3 10.5C3 14.6421 6.35786 18 10.5 18Z"
+                stroke="#717478" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+          <path d="M16 16L21 21" stroke="#717478" stroke-width="1.4" stroke-linecap="round"
+                stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <input autocomplete="off" class="header__search-input" type="text" placeholder="Search for Products, Brands and more">
+      <ul  class="header__search-dropdown"></ul>
+    </div>
+  </div>
+  
   <div class="category-bar">
     <div class="category-bar__list">
       <div class="category-bar__item">

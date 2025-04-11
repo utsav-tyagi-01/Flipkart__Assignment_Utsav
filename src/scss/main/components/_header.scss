@@ -1,9 +1,6 @@
 @use "../mixins/mixins" as *;
 @use "../variables/variables" as *;
 
-
-
-
 * {
   padding: 0;
   margin: 0;
@@ -43,12 +40,18 @@ header{
   &__logo {
     cursor: pointer;
     @include transition(transform, 0.3s);
-
+  
+    img {
+      max-width: 120px; 
+      height: auto;
+      width: 100%;
+    }
+  
     &:hover {
       transform: scale(1.1);
     }
   }
-
+  
   &__search {
     position: relative;
     display: flex;
@@ -61,7 +64,7 @@ header{
     @include box-shadow($box-shadow-light);
 
     &:hover {
-      @include box-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+      @include box-shadow(0 2px 4px $filter-box-shadow);
     }
 
     &-input {
@@ -87,13 +90,13 @@ header{
       left: 0;
       width: 100%;
       background-color: $white;
-      border: 1px solid #ccc;
+      border: 1px solid $price-color-input;
       border-top: none;
       z-index: 10;
       display: none;
       list-style: none;
       padding: 8px 0;
-      @include box-shadow(0 2px 8px rgba(0, 0, 0, 0.15));
+      @include box-shadow(0 2px 8px $dropdown-box-shadow);
       border-radius: 0 0 4px 4px;
 
       li {
@@ -109,7 +112,7 @@ header{
 
         &:first-child {
           font-weight: bold;
-          color: #666;
+          color: $text-color-1;
           cursor: default;
         }
       }
@@ -242,6 +245,58 @@ header{
     }
   }
 
+  &__hamburger {
+    display: none; 
+    position: relative;
+    margin-right: 15px;
+  
+    i {
+      font-size: 1.5rem;
+      color: $black;
+      cursor: pointer;
+      padding: 10px;
+    }
+  
+    &-menu {
+      display: none;
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: $white;
+      border: 1px solid $border-color;
+      border-radius: 8px;
+      width: 250px;
+      z-index: 1000;
+      box-shadow: $box-shadow-dark;
+      padding: 10px;
+  
+      a {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+        text-decoration: none;
+        font-size: $font-size-xsmall;
+        color: $black;
+        border-radius: 4px;
+  
+        img {
+          width: 20px;
+          height: 20px;
+        }
+  
+        &:hover {
+          background-color: $hover-bg-color;
+        }
+      }
+  
+      &.show {
+        display: flex;
+      }
+    }
+  }
+  
   @media (max-width: 1192px) {
     &__right-nav--cart span,
     &__right-nav--seller span {
@@ -278,5 +333,58 @@ header{
     &__right-nav--more{
       display: none;
     }
+  }
+}
+
+.mobile-search {
+  display: none;
+  background: $white;
+  padding: 8px 12px;
+  border-bottom: 1px solid $mobile-search-dropdown;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    border: 1px solid $price-color-input;
+    border-radius: 4px;
+    padding: 6px 10px;
+    background-color: $light-gray;
+  }
+
+  &__icon {
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}
+
+.mobile-search .header__search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .header__hamburger {
+    display: flex;
+    align-items: center;
+  }
+  .header__left{
+    justify-content: start;
+  }
+
+  .header__right-nav--seller,
+  .header__right-nav--more {
+    display: none;
   }
 }
