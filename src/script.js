@@ -92,10 +92,12 @@ function positionDropdown(input, dropdown) {
   const rect = input.getBoundingClientRect();
  const width = window.innerWidth;
  if(width<=798){
+ const left=39;
+  const wide=48;
   dropdown.style.position = "absolute";
   dropdown.style.top = `${window.scrollY + rect.bottom}px`;
-  dropdown.style.left = `${rect.left}px`;
-  dropdown.style.width = `${rect.width}px`;
+  dropdown.style.left = `${rect.left -left}px`;
+  dropdown.style.width = `${rect.width + wide}px`;
   dropdown.style.zIndex = "9";
   dropdown.style.display = "block";
  }
